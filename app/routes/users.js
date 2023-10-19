@@ -1,12 +1,37 @@
 import express from 'express';
-import { viewUser, createUser, updateUser, deleteUser, getUserById, getUserByName, sortByEmail } from '../controllers/users_controllers.js'
+import { viewUser, createUser, updateUser, deleteUser, getUserById, getUserByName, sortByEmail, getUsersWithPagination } from '../controllers/users_controllers.js'
 import verifyToken from '../middlewares/auth_middlewares.js'
 
 const route = express.Router();
 
-//Ver usuarios.
+// //Ver usuarios.
+// route.get('/', (req, res) => {
+//     let result = viewUser();
+//     result.then(users => {
+//         res.json({
+//             users
+//         })
+//     }).catch(err => {
+//         res.status(400).json({err})
+//     })
+// })
+
+//Ver agentes.
 route.get('/', (req, res) => {
-    let result = viewUser();
+    const page = req.query.page;
+    const amount = req.query.amount;
+    if(page && amount){
+        const skip = (page - 1) * amount;
+        let result = getUsersWithPagination(amount, skip)
+        result.then(users =>{
+            res.json({
+                users
+            })
+        }).catch(err => {
+            res.status(400).json({err})
+        })
+    } else {
+        let result = viewUser();
     result.then(users => {
         res.json({
             users
@@ -14,6 +39,7 @@ route.get('/', (req, res) => {
     }).catch(err => {
         res.status(400).json({err})
     })
+    }
 })
 
 //Crear usuario.
@@ -63,7 +89,7 @@ route.get('/:id', verifyToken, (req, res) => {
     let userId = req.params.id;
     getUserById(userId)
         .then(user => {
-            res.json({
+            res.json({  
                 user
             });
         })
@@ -99,6 +125,5 @@ route.get('/sort/sort-by-email', verifyToken, (req, res) => {
         res.status(400).json({err, message: "Se ha producido un error al intentar ordenar los usuarios."})
     })
 })
-
 
 export default route;
