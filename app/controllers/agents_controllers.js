@@ -89,4 +89,10 @@ async function sortByName() {
     return agents;
 }
 
-export { viewAgent, createAgent, updateAgent, deleteAgent, getAgentById, getAgentByName, sortByName };
+//Paginacion
+async function getAgentsWithPagination(amount, skip){
+    let agents = await Agent.find().limit(amount).skip(skip)
+    return agents;
+}
+
+export { viewAgent, createAgent, updateAgent, deleteAgent, getAgentById, getAgentByName, sortByName, getAgentsWithPagination};
