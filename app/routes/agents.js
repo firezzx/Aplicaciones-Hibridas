@@ -1,12 +1,25 @@
 import express from 'express';
-import { viewAgent, createAgent, updateAgent, deleteAgent, getAgentById, getAgentByName, sortByName} from '../controllers/agents_controllers.js'
+import { viewAgent, createAgent, updateAgent, deleteAgent, getAgentById, getAgentByName, sortByName, getAgentsWithPagination} from '../controllers/agents_controllers.js'
 import verifyToken from '../middlewares/auth_middlewares.js'
 
 const route = express.Router();
 
 //Ver agentes.
 route.get('/', (req, res) => {
-    let result = viewAgent();
+    const page = req.query.page;
+    const amount = req.query.amount;
+    if(page && amount){
+        const skip = (page - 1) * amount;
+        let result = getAgentsWithPagination(amount, skip)
+        result.then(agents =>{
+            res.json({
+                agents
+            })
+        }).catch(err => {
+            res.status(400).json({err})
+        })
+    } else {
+        let result = viewAgent();
     result.then(agents => {
         res.json({
             agents
@@ -14,6 +27,7 @@ route.get('/', (req, res) => {
     }).catch(err => {
         res.status(400).json({err})
     })
+    }
 })
 
 //Crear agente.
@@ -99,5 +113,7 @@ route.get('/sort/sort-by-name', verifyToken, (req, res) => {
         res.status(400).json({err, message: "Se ha producido un error al intentar ordenar los agentes."})
     })
 })
+
+
 
 export default route;
