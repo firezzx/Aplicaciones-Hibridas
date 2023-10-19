@@ -4,19 +4,7 @@ import verifyToken from '../middlewares/auth_middlewares.js'
 
 const route = express.Router();
 
-// //Ver usuarios.
-// route.get('/', (req, res) => {
-//     let result = viewUser();
-//     result.then(users => {
-//         res.json({
-//             users
-//         })
-//     }).catch(err => {
-//         res.status(400).json({err})
-//     })
-// })
-
-//Ver agentes.
+//Ver usuarios.
 route.get('/', (req, res) => {
     const page = req.query.page;
     const amount = req.query.amount;
