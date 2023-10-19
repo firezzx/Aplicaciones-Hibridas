@@ -83,4 +83,10 @@ async function sortByEmail() {
     return users;
 }
 
-export { viewUser, createUser, updateUser, deleteUser, getUserById, getUserByName, sortByEmail };
+//Paginacion
+async function getUsersWithPagination(amount, skip){
+    let users = await User.find().limit(amount).skip(skip)
+    return users;
+}
+
+export { viewUser, createUser, updateUser, deleteUser, getUserById, getUserByName, sortByEmail, getUsersWithPagination };
