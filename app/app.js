@@ -41,4 +41,4 @@ app.listen(port, () => {
     console.log(`Servidor vivo en el puerto ${port}.\n> http://localhost:3000`)
 })
 
-//>>>> NO LLEGUE CON EL PAGINADO :c <<<<<//
+//>>>> GRACIAS POR VER <<<<<//
