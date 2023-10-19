@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "65317b2cf0484e73efe5e9fc"
+  },
+  "name": "Phoenix",
+  "rol": "Iniciador",
+  "description": "Phoenix controla el fuego y puede curarse a sí mismo después de tomar daño.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65317b34f0484e73efe5e9fe"
+  },
+  "name": "Sage",
+  "rol": "Centinela",
+  "description": "Sage es una sanadora que puede bloquear áreas y resucitar a compañeros de equipo.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65317b3bf0484e73efe5ea00"
+  },
+  "name": "Sova",
+  "rol": "Iniciador",
+  "description": "Sova es un experto en rastreo y tiene habilidades para localizar enemigos ocultos.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65317b78f0484e73efe5ea02"
+  },
+  "name": "Cypher",
+  "rol": "Centinela",
+  "description": "Cypher es un maestro de la vigilancia y puede obtener información sobre el enemigo.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65317b86f0484e73efe5ea04"
+  },
+  "name": "Brimstone",
+  "rol": "Controlador",
+  "description": "Brimstone utiliza habilidades para controlar el campo de batalla y proporcionar apoyo a su equipo.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65317b8ff0484e73efe5ea06"
+  },
+  "name": "Omen",
+  "rol": "Controlador",
+  "description": "Omen es un maestro de las sombras y puede desorientar a los enemigos.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65317be0f0484e73efe5ea08"
+  },
+  "name": "Killjoy",
+  "rol": "Centinela",
+  "description": "Killjoy utiliza dispositivos para proteger áreas y detener a los enemigos.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65317beaf0484e73efe5ea0a"
+  },
+  "name": "Reyna",
+  "rol": "Duelista",
+  "description": "Reyna consume las almas de sus enemigos para obtener poder adicional.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65317bf0f0484e73efe5ea0c"
+  },
+  "name": "Viper",
+  "rol": "Centinela",
+  "description": "Viper controla veneno y puede bloquear áreas con su habilidades.",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65318853728f3008cdde9c0d"
+  },
+  "name": "Jett",
+  "rol": "Duelista",
+  "description": "Rápida y letal, Jett es una asesina ágil que puede desplazarse por el mapa con facilidad.",
+  "status": true,
+  "__v": 0
+}]
